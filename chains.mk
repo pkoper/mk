@@ -11,3 +11,7 @@ $(foreach target, $(__chain_targets),
 $(eval .PHONY: $(__chain_name))
 $(eval $(__chain_name): $(__chain_last_target))
 endef
+
+$(foreach chain_name, $(filter-out @D @F, $(filter @%, $(.VARIABLES))), \
+  $(call chain, $(chain_name), $($(chain_name))) \
+)
