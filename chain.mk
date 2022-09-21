@@ -1,6 +1,7 @@
 define chain
 $(eval __chain_name    := $1)
 $(eval __chain_targets := $2)
+$(eval __chain_last_target :=)
 $(foreach target, $(__chain_targets),
   $(eval __chain_target := $(target)$(__chain_name))
   $(eval .PHONY: $(__chain_target))
