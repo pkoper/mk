@@ -3,7 +3,7 @@
 Simple solutions for common Makefile challenges.
 
 
-## chain.mk - chain execution of multiple targets in the desired order
+## chains.mk - chain execution of multiple targets in the desired order
 
 ### Problem
 
@@ -37,7 +37,7 @@ The recipie for `_first` ("@echo first") is shared with `first` target, the reci
 Executing `make install` or `make -j4 install` will first run recipie for `_first`, then recipie for `_second`, then recipie for `_last`.
 
 
-### Solution using chain.mk
+### Solution using chains.mk
 
 ```
 all: install
@@ -62,7 +62,7 @@ second
 $
 ```
 
-### Multiple execution chains using chain.mk
+### Multiple execution chains using chains.mk
 
 ```
 all: install
@@ -90,7 +90,7 @@ first
 $
 ```
 
-### Rationale for chain.mk
+### Rationale for chains.mk
 
 - Simple syntactic sugar for ordered execution (KISS)
 - Keeps Makefiles tidy
